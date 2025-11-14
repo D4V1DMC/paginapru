@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
             bubble.style.opacity = "0";
             bubble.style.transform = "translate(-50%, -50%) scale(0.8)";
             setTimeout(() => bubble.remove(), 5000);
-        }, 7000);
+        }, 10000);
     }
 
     // --- Todos los "pi" ---
