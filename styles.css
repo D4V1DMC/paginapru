@@ -1,0 +1,185 @@
+* {
+    -webkit-user-select: none; /* Safari/Chrome */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE/Edge */
+    user-select: none;         /* Estándar */
+}
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #7ec8ff, #a3d6ff);
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  animation: fadeIn 1s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Texto superior e inferior */
+.top-text, .bottom-text {
+  font-size: 16px;
+  color: #033f63;
+  margin: 10px 0 20px 0;
+  text-align: center;
+  animation: fadeInText 1.2s ease forwards;
+  opacity: 0;
+}
+
+.bottom-text {
+  margin-top: 25px;
+  font-size: 15px;
+  animation-delay: 1.2s;
+}
+
+/* Ícono */
+.icon {
+  font-size: 50px; /* tamaño de la manzana */
+  animation: slideDown 1s ease;
+  margin-bottom: 20px;
+}
+
+.icon svg {
+  animation: pulse 2.4s infinite ease-in-out;
+}
+
+/* Tarjeta */
+.card {
+  max-width: 420px;
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+  border: 2px solid #6fbaff;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: cardIn 0.9s ease forwards;
+  opacity: 0;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 22px rgba(0,0,0,0.18);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0077d4;
+  font-weight: 700;
+  letter-spacing: 1px;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+td {
+  border-bottom: 1px solid #b9ddff;
+  padding: 14px 0;
+  color: #033f63;
+  font-size: 15px;
+}
+
+.subtext {
+  font-size: 0.9em;
+  color: #666;
+  font-weight: normal;
+}
+
+td:last-child {
+  text-align: right;
+  color: #033f63;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 12px;
+  color: #0b70c9;
+  font-weight: bold;
+}
+
+/* Frutas flotantes */
+.floating {
+  position: absolute;
+  font-size: 40px;
+  opacity: 0.8;
+  animation: float 6s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+.fruit1 { top: 7%; left: 10%; animation-duration: 7s; }
+.fruit2 { top: 25%; right: 8%; animation-duration: 5s; }
+.fruit3 { bottom: 12%; left: 18%; animation-duration: 6.5s; }
+
+/* Notita musical */
+.music-note {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 38px;
+  opacity: 0.4;
+  animation: float 8s ease-in-out infinite alternate;
+}
+.music-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100; /* para que quede encima de todo */
+    padding: 10px 15px;
+    background-color: #5bb8ff;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+}
+
+.music-btn:hover {
+    background-color: #4096e0;
+}
+
+.icon {
+    cursor: pointer;
+}
+
+.pi-box {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 32px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px black;
+  letter-spacing: 8px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Animaciones */
+@keyframes float {
+  0% { transform: translate(0,0) rotate(0deg); }
+  50% { transform: translate(15px,25px) rotate(6deg); }
+  100% { transform: translate(0,0) rotate(0deg); }
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideDown { from { transform: translateY(-20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes fadeInText { to { opacity: 1; } }
+@keyframes cardIn { from { opacity: 0; transform: scale(0.97); } to { opacity: 1; transform: scale(1); } }
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+@keyframes glow {
+  from { text-shadow: 0 0 0px rgba(0,119,212,0.4); }
+  to { text-shadow: 0 0 8px rgba(0,119,212,0.7); }
+}
