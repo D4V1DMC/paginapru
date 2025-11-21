@@ -4,6 +4,7 @@
     -ms-user-select: none;     /* IE/Edge */
     user-select: none;         /* Estándar */
 }
+
 body {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #7ec8ff, #a3d6ff);
@@ -36,9 +37,10 @@ body {
 
 /* Ícono */
 .icon {
-  font-size: 50px; /* tamaño de la manzana */
+  font-size: 50px;
   animation: slideDown 1s ease;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .icon svg {
@@ -56,6 +58,7 @@ body {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   animation: cardIn 0.9s ease forwards;
   opacity: 0;
+  margin-top: -40px; /* TARJETA SUBIDA */
 }
 
 .card:hover {
@@ -129,11 +132,12 @@ td:last-child {
   opacity: 0.4;
   animation: float 8s ease-in-out infinite alternate;
 }
+
 .music-btn {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 100; /* para que quede encima de todo */
+    z-index: 100;
     padding: 10px 15px;
     background-color: #5bb8ff;
     border: none;
@@ -147,10 +151,6 @@ td:last-child {
 
 .music-btn:hover {
     background-color: #4096e0;
-}
-
-.icon {
-    cursor: pointer;
 }
 
 .pi-box {
@@ -167,6 +167,33 @@ td:last-child {
   transition: opacity 0.5s ease;
 }
 
+.game-link {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Botón juego */
+.game-link a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.1s;
+    box-shadow: 0 4px #388E3C;
+}
+
+.game-link a:hover {
+    background-color: #66BB6A;
+}
+
+.game-link a:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px #388E3C;
+}
+
 /* Animaciones */
 @keyframes float {
   0% { transform: translate(0,0) rotate(0deg); }
@@ -174,11 +201,31 @@ td:last-child {
   100% { transform: translate(0,0) rotate(0deg); }
 }
 
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes slideDown { from { transform: translateY(-20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-@keyframes fadeInText { to { opacity: 1; } }
-@keyframes cardIn { from { opacity: 0; transform: scale(0.97); } to { opacity: 1; transform: scale(1); } }
-@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+@keyframes fadeIn { 
+  from { opacity: 0; } 
+  to { opacity: 1; } 
+}
+
+@keyframes slideDown { 
+  from { transform: translateY(-20px); opacity: 0; } 
+  to { transform: translateY(0); opacity: 1; } 
+}
+
+@keyframes fadeInText { 
+  to { opacity: 1; } 
+}
+
+@keyframes cardIn { 
+  from { opacity: 0; transform: translateY(15px) scale(0.97); } 
+  to { opacity: 1; transform: translateY(0) scale(1); } 
+}
+
+@keyframes pulse { 
+  0% { transform: scale(1); } 
+  50% { transform: scale(1.05); } 
+  100% { transform: scale(1); } 
+}
+
 @keyframes glow {
   from { text-shadow: 0 0 0px rgba(0,119,212,0.4); }
   to { text-shadow: 0 0 8px rgba(0,119,212,0.7); }

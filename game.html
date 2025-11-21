@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cazacalorías Runner</title>
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+
+  <div class="wrap">
+    <header>
+      <h1>Cazacalorías Runner</h1>
+      <p class="hint">Salta con <strong>Espacio</strong> / Tap en móvil — Esquivá comida chatarra</p>
+    </header>
+
+    <main>
+      <!-- CANVAS DEL JUEGO -->
+      <canvas id="game" width="900" height="260" aria-label="Juego runner de nutrición"></canvas>
+
+      <!-- HUD -->
+      <div class="hud">
+        <div>Puntos: <span id="score">0</span></div>
+        <div id="best">Mejor: 0</div>
+      </div>
+
+      <!-- OVERLAY -->
+      <div id="overlay" class="overlay hidden">
+        <div class="overlay-box">
+          <h2 id="overlay-title">Game Over</h2>
+          <p id="overlay-msg">Tap o Espacio para reiniciar</p>
+          <button id="restart">Reiniciar</button>
+        </div>
+      </div>
+    </main>
+  </div>
+  <audio id="sound-jump" src="sounds/jump.mp3" preload="auto"></audio>
+    <audio id="sound-hit" src="sounds/hit.mp3" preload="auto"></audio>
+    <audio id="sound-score" src="sounds/score.mp3" preload="auto"></audio>
+  <script src="game.js"></script>
+  
+    </body>
+</html>
